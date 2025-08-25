@@ -259,7 +259,11 @@ export const Portfolio = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="neon-border bg-primary hover:bg-primary/80 text-primary-foreground neon-glow">
+            <Button 
+              size="lg" 
+              className="neon-border bg-primary hover:bg-primary/80 text-primary-foreground neon-glow"
+              onClick={() => window.open('https://drive.google.com/uc?export=download&id=1PnhWr12cgTwJqYAFNSdocKfqVgb7x4Ru', '_blank')}
+            >
               <Download className="mr-2 h-5 w-5" />
               Download Resume
             </Button>
@@ -430,10 +434,17 @@ export const Portfolio = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {certifications.map((cert, index) => (
-              <Card key={index} className="card-hover neon-border bg-card/50">
+              <Card 
+                key={index} 
+                className={`card-hover neon-border bg-card/50 ${cert === 'Google Cloud Generative AI Track' ? 'cursor-pointer' : ''}`}
+                onClick={cert === 'Google Cloud Generative AI Track' ? () => window.open('https://drive.google.com/file/d/1_2gQEoaC9o2K60r0-nUFd__EBCisHURA/view?usp=drive_link', '_blank') : undefined}
+              >
                 <CardContent className="p-6 text-center">
                   <Award className="h-12 w-12 mx-auto mb-4 text-secondary" />
                   <p className="font-medium">{cert}</p>
+                  {cert === 'Google Cloud Generative AI Track' && (
+                    <ExternalLink className="h-4 w-4 mx-auto mt-2 text-muted-foreground" />
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -498,7 +509,7 @@ export const Portfolio = () => {
                     </div>
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">santhoshkumar@example.com</p>
+                      <p className="text-muted-foreground">santhoshb6361@gmail.com</p>
                     </div>
                   </div>
                   
