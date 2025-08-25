@@ -61,7 +61,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				neon: {
+					blue: 'hsl(var(--neon-blue))',
+					purple: 'hsl(var(--neon-purple))',
+					pink: 'hsl(var(--neon-pink))',
+					cyan: 'hsl(var(--neon-cyan))'
 				}
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'monospace'],
+			},
+			boxShadow: {
+				neon: 'var(--glow-blue)',
+				'neon-purple': 'var(--glow-purple)',
+				'neon-pink': 'var(--glow-pink)',
+				'neon-strong': 'var(--glow-strong)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
