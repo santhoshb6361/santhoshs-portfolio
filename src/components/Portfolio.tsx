@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { TypingAnimation } from "./TypingAnimation";
-import profilePicture from "@/assets/profile-picture.jpg";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
+// Using the uploaded profile picture
+const profilePicture = "/lovable-uploads/52e821c7-65a1-4374-8faa-21a34735ba4f.png";
 import { 
   Download, 
   Mail, 
@@ -29,6 +32,9 @@ import {
 
 export const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const { toast } = useToast();
 
   const typingTexts = [
     "Software Developer",
@@ -166,6 +172,35 @@ export const Portfolio = () => {
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.sendForm(
+        'service_wasm3p4',
+        'template_gy71a1k',
+        formRef.current!,
+        '_diXxBUhbXmZ3LrIO'
+      );
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      formRef.current?.reset();
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -422,14 +457,33 @@ export const Portfolio = () => {
               <CardHeader>
                 <CardTitle className="text-primary">Send a Message</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <Input placeholder="Your Name" className="neon-border" />
-                <Input type="email" placeholder="Your Email" className="neon-border" />
-                <Textarea placeholder="Your Message" rows={5} className="neon-border" />
-                <Button className="w-full neon-glow">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Send Message
-                </Button>
+              <CardContent>
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                  <Input 
+                    name="from_name" 
+                    placeholder="Your Name" 
+                    className="neon-border" 
+                    required 
+                  />
+                  <Input 
+                    type="email" 
+                    name="from_email" 
+                    placeholder="Your Email" 
+                    className="neon-border" 
+                    required 
+                  />
+                  <Textarea 
+                    name="message" 
+                    placeholder="Your Message" 
+                    rows={5} 
+                    className="neon-border" 
+                    required 
+                  />
+                  <Button type="submit" className="w-full neon-glow" disabled={isSubmitting}>
+                    <Mail className="mr-2 h-4 w-4" />
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
 
@@ -454,7 +508,7 @@ export const Portfolio = () => {
                     </div>
                     <div>
                       <p className="font-medium">Phone</p>
-                      <p className="text-muted-foreground">+91 XXXXXXXXXX</p>
+                      <p className="text-muted-foreground">+91 6361989114</p>
                     </div>
                   </div>
                   
