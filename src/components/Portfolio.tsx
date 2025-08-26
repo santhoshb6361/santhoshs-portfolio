@@ -73,36 +73,36 @@ export const Portfolio = () => {
       title: "Blog Management System",
       description: "Full-stack web application for creating, managing, and publishing blog posts with user authentication and rich text editor.",
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/santhoshb6361",
+      demo: "https://github.com/santhoshb6361"
     },
     {
       title: "Pro Insight (AI Assistant)",
       description: "Intelligent AI assistant powered by OpenAI API for answering queries, content generation, and productivity enhancement.",
       tech: ["Python", "OpenAI API", "Streamlit", "NLP"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/santhoshb6361",
+      demo: "https://github.com/santhoshb6361"
     },
     {
       title: "Movie Recommendation System",
       description: "ML-powered recommendation engine that suggests movies based on user preferences and viewing history.",
       tech: ["Python", "Scikit-Learn", "Pandas", "Flask"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/santhoshb6361",
+      demo: "https://github.com/santhoshb6361"
     },
     {
       title: "Geo Media",
       description: "Location-based social media platform for sharing and discovering content based on geographical proximity.",
       tech: ["React Native", "Firebase", "Google Maps API"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/santhoshb6361",
+      demo: "https://github.com/santhoshb6361"
     },
     {
       title: "Report It",
       description: "Community reporting platform for citizens to report local issues and track resolution progress.",
       tech: ["JavaScript", "Firebase", "CSS", "HTML"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/santhoshb6361",
+      demo: "https://github.com/santhoshb6361"
     }
   ];
 
@@ -346,11 +346,20 @@ export const Portfolio = () => {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="flex-1">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.open(project.github, '_blank')}
+                    >
                       <Github className="h-4 w-4 mr-1" />
                       Code
                     </Button>
-                    <Button size="sm" className="flex-1">
+                    <Button 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => window.open(project.demo, '_blank')}
+                    >
                       <ExternalLink className="h-4 w-4 mr-1" />
                       Demo
                     </Button>
