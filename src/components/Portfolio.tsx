@@ -433,21 +433,38 @@ export const Portfolio = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {certifications.map((cert, index) => (
-              <Card 
-                key={index} 
-                className={`card-hover neon-border bg-card/50 ${cert === 'Google Cloud Generative AI Track' ? 'cursor-pointer' : ''}`}
-                onClick={cert === 'Google Cloud Generative AI Track' ? () => window.open('https://drive.google.com/file/d/1_2gQEoaC9o2K60r0-nUFd__EBCisHURA/view?usp=drive_link', '_blank') : undefined}
-              >
-                <CardContent className="p-6 text-center">
-                  <Award className="h-12 w-12 mx-auto mb-4 text-secondary" />
-                  <p className="font-medium">{cert}</p>
-                  {cert === 'Google Cloud Generative AI Track' && (
-                    <ExternalLink className="h-4 w-4 mx-auto mt-2 text-muted-foreground" />
-                  )}
-                </CardContent>
-              </Card>
-            ))}
+            {certifications.map((cert, index) => {
+              const getClickHandler = () => {
+                switch(cert) {
+                  case 'Google Cloud Generative AI Track':
+                    return () => window.open('https://drive.google.com/file/d/1_2gQEoaC9o2K60r0-nUFd__EBCisHURA/view?usp=drive_link', '_blank');
+                  case 'Oracle Cloud Infrastructure Foundations':
+                    return () => window.open('https://drive.google.com/file/d/1icUD1No2yvyGf12I3JG5xzERZkyiHJqi/view?usp=sharing', '_blank');
+                  case 'Java Full Stack with React JS & AI':
+                    return () => window.open('https://drive.google.com/file/d/1w16cFqNyaDmpRUH0ZRZVtA48w3HLbECK/view?usp=sharing', '_blank');
+                  default:
+                    return undefined;
+                }
+              };
+              
+              const isClickable = ['Google Cloud Generative AI Track', 'Oracle Cloud Infrastructure Foundations', 'Java Full Stack with React JS & AI'].includes(cert);
+              
+              return (
+                <Card 
+                  key={index} 
+                  className={`card-hover neon-border bg-card/50 ${isClickable ? 'cursor-pointer' : ''}`}
+                  onClick={getClickHandler()}
+                >
+                  <CardContent className="p-6 text-center">
+                    <Award className="h-12 w-12 mx-auto mb-4 text-secondary" />
+                    <p className="font-medium">{cert}</p>
+                    {isClickable && (
+                      <ExternalLink className="h-4 w-4 mx-auto mt-2 text-muted-foreground" />
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
