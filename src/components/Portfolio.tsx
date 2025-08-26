@@ -262,7 +262,7 @@ export const Portfolio = () => {
             <Button 
               size="lg" 
               className="neon-border bg-primary hover:bg-primary/80 text-primary-foreground neon-glow"
-              onClick={() => window.open('https://drive.google.com/uc?export=download&id=1PnhWr12cgTwJqYAFNSdocKfqVgb7x4Ru', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1PnhWr12cgTwJqYAFNSdocKfqVgb7x4Ru/view', '_blank')}
             >
               <Download className="mr-2 h-5 w-5" />
               Download Resume
