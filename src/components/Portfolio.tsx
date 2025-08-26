@@ -556,13 +556,28 @@ export const Portfolio = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-4">Connect with me</h4>
                 <div className="flex gap-4">
-                  <Button size="icon" variant="outline" className="neon-border hover:neon-glow">
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="neon-border hover:neon-glow"
+                    onClick={() => window.open('https://www.linkedin.com/in/santhosh-kumar-b-526216317', '_blank')}
+                  >
                     <Linkedin className="h-5 w-5" />
                   </Button>
-                  <Button size="icon" variant="outline" className="neon-border hover:neon-glow">
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="neon-border hover:neon-glow"
+                    onClick={() => window.open('https://github.com/santhoshb6361', '_blank')}
+                  >
                     <Github className="h-5 w-5" />
                   </Button>
-                  <Button size="icon" variant="outline" className="neon-border hover:neon-glow">
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="neon-border hover:neon-glow"
+                    onClick={() => window.open('mailto:santhoshb6361@gmail.com', '_blank')}
+                  >
                     <Mail className="h-5 w-5" />
                   </Button>
                 </div>
