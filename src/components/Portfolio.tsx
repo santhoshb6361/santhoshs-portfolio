@@ -481,62 +481,118 @@ export const Portfolio = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-muted/20">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-8 animate-pulse">
+          <h2 className="text-4xl font-bold text-center mb-4">
             <span className="gradient-neon bg-clip-text text-transparent">✨ Let's Connect</span>
           </h2>
+          <p className="text-center text-muted-foreground mb-16">
+            Ready to collaborate on amazing projects? Let's build something incredible together!
+          </p>
           
-          <form 
-            action="https://api.web3forms.com/submit" 
-            method="POST" 
-            className="max-w-lg mx-auto bg-card/50 p-8 rounded-2xl shadow-lg border border-primary/30 hover:shadow-primary/20 transition-all duration-300 neon-border"
-          >
-            {/* Hidden API Key */}
-            <input type="hidden" name="access_key" value="9a44845b-e8bf-4284-ac9e-06688f2167b0" />
-            
-            {/* Name */}
-            <div className="mb-6">
-              <Input 
-                type="text" 
-                name="name" 
-                placeholder="Your Name" 
-                required 
-                className="w-full p-3 rounded-md bg-background border border-primary/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <Card className="neon-border bg-card/50">
+              <CardHeader>
+                <CardTitle className="text-primary">Send a Message</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                  <Input 
+                    name="from_name" 
+                    placeholder="Your Name" 
+                    className="neon-border" 
+                    required 
+                  />
+                  <Input 
+                    type="email" 
+                    name="from_email" 
+                    placeholder="Your Email" 
+                    className="neon-border" 
+                    required 
+                  />
+                  <Textarea 
+                    name="message" 
+                    placeholder="Your Message" 
+                    rows={5} 
+                    className="neon-border" 
+                    required 
+                  />
+                  <Button type="submit" className="w-full neon-glow" disabled={isSubmitting}>
+                    <Mail className="mr-2 h-4 w-4" />
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 text-secondary">Get in Touch</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center neon-glow">
+                      <Mail className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Email</p>
+                      <p className="text-muted-foreground">santhoshb6361@gmail.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center neon-glow-purple">
+                      <Phone className="h-5 w-5 text-secondary" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Phone</p>
+                      <p className="text-muted-foreground">+91 6361989114</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center neon-glow-pink">
+                      <MapPin className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Location</p>
+                      <p className="text-muted-foreground">Ballari, Karnataka, India</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Connect with me</h4>
+                <div className="flex gap-4">
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="neon-border hover:neon-glow"
+                    onClick={() => window.open('https://www.linkedin.com/in/santhosh-kumar-b-526216317', '_blank')}
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </Button>
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="neon-border hover:neon-glow"
+                    onClick={() => window.open('https://github.com/santhoshb6361', '_blank')}
+                  >
+                    <Github className="h-5 w-5" />
+                  </Button>
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="neon-border hover:neon-glow"
+                    onClick={() => window.open('mailto:santhoshb6361@gmail.com', '_blank')}
+                  >
+                    <Mail className="h-5 w-5" />
+                  </Button>
+                </div>
+              </div>
             </div>
-
-            {/* Email */}
-            <div className="mb-6">
-              <Input 
-                type="email" 
-                name="email" 
-                placeholder="Your Email" 
-                required 
-                className="w-full p-3 rounded-md bg-background border border-primary/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-
-            {/* Message */}
-            <div className="mb-6">
-              <Textarea 
-                name="message" 
-                rows={5} 
-                placeholder="Your Message" 
-                required 
-                className="w-full p-3 rounded-md bg-background border border-primary/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <Button 
-              type="submit" 
-              className="w-full py-3 rounded-md bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-primary/20 neon-glow"
-            >
-              🚀 Send Message
-            </Button>
-          </form>
-
-          {/* Success Message */}
-          <p className="text-muted-foreground mt-6 text-center">I'll get back to you as soon as possible!</p>
+          </div>
         </div>
       </section>
 
