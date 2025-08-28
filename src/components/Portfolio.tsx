@@ -349,16 +349,24 @@ export const Portfolio = () => {
                     <Button 
                       size="sm" 
                       variant="outline" 
-                      className="flex-1"
-                      onClick={() => window.open('https://github.com/santhoshb6361?tab=repositories', '_blank')}
+                      className="flex-1 cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        console.log('Code button clicked');
+                        window.open('https://github.com/santhoshb6361?tab=repositories', '_blank');
+                      }}
                     >
                       <Github className="h-4 w-4 mr-1" />
                       Code
                     </Button>
                     <Button 
                       size="sm" 
-                      className="flex-1"
-                      onClick={() => window.open('https://github.com/santhoshb6361?tab=repositories', '_blank')}
+                      className="flex-1 cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        console.log('Demo button clicked');
+                        window.open('https://github.com/santhoshb6361?tab=repositories', '_blank');
+                      }}
                     >
                       <ExternalLink className="h-4 w-4 mr-1" />
                       Demo
