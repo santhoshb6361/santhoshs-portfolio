@@ -495,16 +495,23 @@ export const Portfolio = () => {
                 <CardTitle className="text-primary">Send a Message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <form 
+                  action="https://api.web3forms.com/submit" 
+                  method="POST" 
+                  className="space-y-4"
+                >
+                  {/* Hidden API Key */}
+                  <input type="hidden" name="access_key" value="9a44845b-e8bf-4284-ac9e-06688f2167b0" />
+                  
                   <Input 
-                    name="from_name" 
+                    name="name" 
                     placeholder="Your Name" 
                     className="neon-border" 
                     required 
                   />
                   <Input 
                     type="email" 
-                    name="from_email" 
+                    name="email" 
                     placeholder="Your Email" 
                     className="neon-border" 
                     required 
@@ -516,9 +523,9 @@ export const Portfolio = () => {
                     className="neon-border" 
                     required 
                   />
-                  <Button type="submit" className="w-full neon-glow" disabled={isSubmitting}>
+                  <Button type="submit" className="w-full neon-glow">
                     <Mail className="mr-2 h-4 w-4" />
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    Send Message
                   </Button>
                 </form>
               </CardContent>
