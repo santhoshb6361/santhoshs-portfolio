@@ -350,7 +350,7 @@ export const Portfolio = () => {
                       size="sm" 
                       variant="outline" 
                       className="flex-1"
-                      onClick={() => window.open(project.github, '_blank')}
+                      onClick={() => window.open('https://github.com/santhoshb6361?tab=repositories', '_blank')}
                     >
                       <Github className="h-4 w-4 mr-1" />
                       Code
@@ -358,7 +358,7 @@ export const Portfolio = () => {
                     <Button 
                       size="sm" 
                       className="flex-1"
-                      onClick={() => window.open(project.demo, '_blank')}
+                      onClick={() => window.open('https://github.com/santhoshb6361?tab=repositories', '_blank')}
                     >
                       <ExternalLink className="h-4 w-4 mr-1" />
                       Demo
