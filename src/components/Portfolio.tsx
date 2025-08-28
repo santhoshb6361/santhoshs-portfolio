@@ -345,32 +345,27 @@ export const Portfolio = () => {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-2">
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="flex-1 cursor-pointer"
-                      onClick={(e) => {
-                        e.preventDefault();
+                  <div className="flex gap-2 relative z-10">
+                    <button 
+                      className="flex-1 h-9 px-3 rounded-md text-sm font-medium border border-primary bg-transparent text-primary hover:bg-primary/10 transition-all duration-300 cursor-pointer flex items-center justify-center gap-1"
+                      onClick={() => {
                         console.log('Code button clicked');
                         window.open('https://github.com/santhoshb6361?tab=repositories', '_blank');
                       }}
                     >
-                      <Github className="h-4 w-4 mr-1" />
+                      <Github className="h-4 w-4" />
                       Code
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      className="flex-1 cursor-pointer"
-                      onClick={(e) => {
-                        e.preventDefault();
+                    </button>
+                    <button 
+                      className="flex-1 h-9 px-3 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 cursor-pointer flex items-center justify-center gap-1"
+                      onClick={() => {
                         console.log('Demo button clicked');
                         window.open('https://github.com/santhoshb6361?tab=repositories', '_blank');
                       }}
                     >
-                      <ExternalLink className="h-4 w-4 mr-1" />
+                      <ExternalLink className="h-4 w-4" />
                       Demo
-                    </Button>
+                    </button>
                   </div>
                 </CardContent>
               </Card>
@@ -531,10 +526,14 @@ export const Portfolio = () => {
                     className="neon-border" 
                     required 
                   />
-                  <Button type="submit" className="w-full neon-glow">
-                    <Mail className="mr-2 h-4 w-4" />
+                  <button 
+                    type="submit" 
+                    className="w-full h-10 px-4 py-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+                    onClick={() => console.log('Send Message button clicked')}
+                  >
+                    <Mail className="h-4 w-4" />
                     Send Message
-                  </Button>
+                  </button>
                 </form>
               </CardContent>
             </Card>
