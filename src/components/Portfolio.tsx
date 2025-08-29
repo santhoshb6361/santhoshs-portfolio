@@ -533,7 +533,7 @@ export const Portfolio = () => {
                   />
                   <Button 
                     type="submit" 
-                    className="w-full"
+                    className="w-full relative z-10"
                   >
                     <Mail className="mr-2 h-4 w-4" />
                     Send Message
