@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
+# santhoshs-portfolio
 
-## Project info
+A modern, responsive developer portfolio built with **Vite**, **React**, **TypeScript**, **shadcn-ui**, and **Tailwind CSS**.
 
-**URL**: https://lovable.dev/projects/94686d15-66be-4d27-9d7a-e7a3422ab4d5
+🌐 **Live Demo**: [santhoshs-portfolio.vercel.app](https://santhoshs-portfolio.vercel.app)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
+- **Language & Bundler**: TypeScript + Vite  
+- **Framework**: React  
+- **UI Components**: shadcn-ui  
+- **Styling**: Tailwind CSS  
+- **Deployment**: Vercel  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94686d15-66be-4d27-9d7a-e7a3422ab4d5) and start prompting.
+## ✨ Features
+- ⚡ Blazing fast SPA powered by Vite  
+- 🧩 Modular UI components with shadcn-ui  
+- 📱 Fully responsive design across devices  
+- 🎨 Styled with Tailwind CSS for flexibility  
+- ☁️ Easy deployment via Vercel  
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 📂 Project Structure
+├── public/ # Static assets
+├── src/ # React app source
+├── package.json # Dependencies & scripts
+├── vite.config.ts # Vite configuration
+├── tsconfig.json # TypeScript settings
+└── tailwind.config.ts # Tailwind config
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Getting Started
 
-Follow these steps:
+### Prerequisites
+- Node.js (v16 or higher)  
+- npm or yarn  
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/santhoshb6361/santhoshs-portfolio.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate into the project folder
+cd santhoshs-portfolio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install   # or yarn install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+# Build for production
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Preview production build
+npm run preview
+🌍 Deployment
 
-**Use GitHub Codespaces**
+This project is deployed on Vercel.
+Pushing changes to the main branch will trigger automatic deployment (if configured).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📌 Roadmap
 
-## What technologies are used for this project?
+Add portfolio sections: About, Projects, Contact
 
-This project is built with:
+Implement dark mode toggle & animations
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+SEO optimization & accessibility improvements
 
-## How can I deploy this project?
+Blog integration
 
-Simply open [Lovable](https://lovable.dev/projects/94686d15-66be-4d27-9d7a-e7a3422ab4d5) and click on Share -> Publish.
+📜 License
 
-## Can I connect a custom domain to my Lovable project?
+This project is licensed under the MIT License.
+See the LICENSE
+ file for details.
 
-Yes, you can!
+📬 Contact
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+GitHub: santhoshb6361
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+LinkedIn: Your LinkedIn Profile
+
+Email: your.email@example.com
+
+---
+
+Do you want me to also **generate a fancy version with badges** (like React, Tailwind, Vite, License, Deploy on Vercel) at the top to make it more eye-catching for visitors?
