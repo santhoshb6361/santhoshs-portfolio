@@ -501,7 +501,7 @@ export const Portfolio = () => {
                 <form 
                   action="https://api.web3forms.com/submit" 
                   method="POST" 
-                  className="space-y-4 relative"
+                  className="space-y-4"
                   onSubmit={(e) => {
                     console.log('Form submitted');
                     // Allow normal form submission to Web3Forms
@@ -533,8 +533,7 @@ export const Portfolio = () => {
                   />
                   <Button 
                     type="submit" 
-                    className="w-full relative z-10"
-                    variant="default"
+                    className="w-full"
                   >
                     <Mail className="mr-2 h-4 w-4" />
                     Send Message
