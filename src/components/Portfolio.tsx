@@ -502,9 +502,14 @@ export const Portfolio = () => {
                   action="https://api.web3forms.com/submit" 
                   method="POST" 
                   className="space-y-4"
+                  onSubmit={(e) => {
+                    console.log('Form submitted');
+                    // Allow normal form submission to Web3Forms
+                  }}
                 >
                   {/* Hidden API Key */}
                   <input type="hidden" name="access_key" value="9a44845b-e8bf-4284-ac9e-06688f2167b0" />
+                  <input type="hidden" name="redirect" value="https://web3forms.com/success" />
                   
                   <Input 
                     name="name" 
@@ -526,14 +531,13 @@ export const Portfolio = () => {
                     className="neon-border" 
                     required 
                   />
-                  <button 
+                  <Button 
                     type="submit" 
-                    className="w-full h-10 px-4 py-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
-                    onClick={() => console.log('Send Message button clicked')}
+                    className="w-full"
                   >
-                    <Mail className="h-4 w-4" />
+                    <Mail className="mr-2 h-4 w-4" />
                     Send Message
-                  </button>
+                  </Button>
                 </form>
               </CardContent>
             </Card>
