@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { TypingAnimation } from "./TypingAnimation";
+import { Chatbot } from "./Chatbot";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
 // Using the uploaded profile picture
@@ -205,6 +206,8 @@ export const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Chatbot />
+      
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
