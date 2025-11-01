@@ -117,7 +117,7 @@ export const Chatbot = () => {
         {!isOpen && (
           <Button
             onClick={() => setIsOpen(true)}
-            className={`h-16 w-16 rounded-full bg-gradient-to-br from-primary via-accent to-secondary hover:from-primary/90 hover:via-accent/90 hover:to-secondary/90 shadow-2xl neon-glow transition-all duration-300 ${
+            className={`h-16 w-16 rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 ${
               isJumping ? "animate-bounce" : ""
             }`}
             style={{
@@ -134,26 +134,26 @@ export const Chatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 h-[550px] bg-background border-2 border-primary/30 rounded-2xl shadow-2xl neon-glow flex flex-col animate-scale-in">
-          {/* Pet Header */}
-          <div className="flex items-center justify-between p-4 border-b-2 border-primary/20 bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-t-2xl">
+        <div className="fixed bottom-6 right-6 z-50 w-96 h-[550px] bg-card border border-border rounded-lg shadow-2xl flex flex-col animate-scale-in">
+          {/* Header */}
+          <div className="flex items-center justify-between p-4 border-b border-border bg-muted/50 rounded-t-lg">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
-                  <span className="text-2xl">🐕</span>
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                  <MessageCircle className="h-5 w-5 text-primary-foreground" />
                 </div>
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-background"></div>
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-card"></div>
               </div>
               <div>
-                <h3 className="font-bold text-primary">Portfolio Assistant</h3>
-                <p className="text-xs text-muted-foreground">Always ready to help!</p>
+                <h3 className="font-semibold text-foreground">Portfolio Assistant</h3>
+                <p className="text-xs text-muted-foreground">Online now</p>
               </div>
             </div>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(false)}
-              className="h-8 w-8 hover:bg-destructive/20"
+              className="h-8 w-8 hover:bg-muted"
             >
               <X className="h-4 w-4" />
             </Button>
@@ -170,10 +170,10 @@ export const Chatbot = () => {
                   }`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-2xl p-3 ${
+                    className={`max-w-[85%] rounded-lg p-3 ${
                       message.sender === "user"
                         ? "bg-primary text-primary-foreground"
-                        : "bg-gradient-to-br from-muted to-muted/50 border border-primary/20"
+                        : "bg-muted text-foreground"
                     } animate-fade-in`}
                   >
                     <p className="text-sm leading-relaxed">{message.text}</p>
@@ -184,7 +184,7 @@ export const Chatbot = () => {
           </ScrollArea>
 
           {/* Input */}
-          <div className="p-4 border-t-2 border-primary/20 bg-card/50 rounded-b-2xl">
+          <div className="p-4 border-t border-border bg-muted/30 rounded-b-lg">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -195,19 +195,19 @@ export const Chatbot = () => {
               <Input
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
-                placeholder="Ask me anything..."
-                className="flex-1 border-primary/30 focus:border-primary"
+                placeholder="Type your message..."
+                className="flex-1 bg-background"
               />
               <Button 
                 type="submit" 
                 size="icon" 
-                className="relative z-10 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                className="bg-primary hover:bg-primary/90"
               >
                 <Send className="h-4 w-4" />
               </Button>
             </form>
             <p className="text-xs text-muted-foreground text-center mt-2">
-              Try: &quot;skills&quot;, &quot;projects&quot;, &quot;achievements&quot;
+              Ask about skills, projects, or achievements
             </p>
           </div>
         </div>
