@@ -23,42 +23,42 @@ const getBotResponse = (userMessage: string): string => {
   const msg = userMessage.toLowerCase();
   
   if (msg.includes("skill") || msg.includes("technology") || msg.includes("tech")) {
-    return `Woof! 🐕 Santhosh knows these cool tricks: ${portfolioKnowledge.skills.slice(0, 5).join(", ")} and more! Want to know about specific technologies?`;
+    return `Santhosh is skilled in: ${portfolioKnowledge.skills.slice(0, 5).join(", ")} and more! Would you like to know about specific technologies?`;
   }
   
   if (msg.includes("project")) {
-    return `🎾 Fetch! Here are Santhosh's favorite projects: ${portfolioKnowledge.projects.slice(0, 3).join(", ")}. Ask me about any specific project!`;
+    return `Here are some of Santhosh's key projects: ${portfolioKnowledge.projects.slice(0, 3).join(", ")}. Feel free to ask about any specific project!`;
   }
   
   if (msg.includes("achievement") || msg.includes("award")) {
-    return `*wags tail* 🏆 Santhosh has won: ${portfolioKnowledge.achievements.join(", ")}. Pretty pawsome, right?`;
+    return `Santhosh has achieved: ${portfolioKnowledge.achievements.join(", ")}.`;
   }
   
   if (msg.includes("education") || msg.includes("study") || msg.includes("college")) {
-    return `📚 *sits attentively* ${portfolioKnowledge.education}. Learning new tricks every day!`;
+    return `${portfolioKnowledge.education}`;
   }
   
   if (msg.includes("contact") || msg.includes("email") || msg.includes("reach")) {
-    return `📧 *barks excitedly* You can contact Santhosh through the contact section below! Just scroll down and fill out the form. I'll make sure he gets your message!`;
+    return `You can contact Santhosh through the contact section below. Just scroll down and fill out the form to get in touch!`;
   }
   
   if (msg.includes("blog") || msg.includes("cms")) {
-    return `🐾 The Blog Management System is a full-stack web app built with React, Node.js, MongoDB, and Express. It helps create and manage blog posts with authentication!`;
+    return `The Blog Management System is a full-stack web application built with React, Node.js, MongoDB, and Express. It provides features for creating and managing blog posts with authentication.`;
   }
   
   if (msg.includes("ai") || msg.includes("insight")) {
-    return `🤖 *tilts head* Pro Insight is an AI assistant powered by OpenAI API! It helps with queries, content generation, and productivity. Pretty smart, like me!`;
+    return `Pro Insight is an AI assistant powered by OpenAI API. It helps with queries, content generation, and productivity tasks.`;
   }
   
   if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey")) {
-    return `*jumps excitedly* 🐕 Woof woof! Hi there! I'm Santhosh's portfolio pet! Ask me about his skills, projects, achievements, or education!`;
+    return `Hello! I'm here to help you learn about Santhosh's portfolio. Ask me about his skills, projects, achievements, or education!`;
   }
   
   if (msg.includes("who") || msg.includes("about")) {
-    return `🐾 Santhosh is a passionate Software Developer and AI Engineer! He loves building cool stuff with AI, full-stack development, and solving problems. Want to know more about his skills or projects?`;
+    return `Santhosh is a passionate Software Developer and AI Engineer. He specializes in building AI-powered applications, full-stack development, and solving complex problems. Want to know more about his skills or projects?`;
   }
   
-  return `*wags tail* 🐕 Woof! I'm here to help! Ask me about Santhosh's skills, projects, achievements, education, or how to contact him!`;
+  return `I'm here to help! Ask me about Santhosh's skills, projects, achievements, education, or how to contact him.`;
 };
 
 export const Chatbot = () => {
@@ -67,7 +67,7 @@ export const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "*wags tail* 🐕 Woof! Hi! I'm Santhosh's portfolio pet! Ask me about his skills, projects, or achievements!",
+      text: "Hello! I'm Santhosh's portfolio assistant. Ask me about his skills, projects, achievements, or education!",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -145,7 +145,7 @@ export const Chatbot = () => {
                 <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-background"></div>
               </div>
               <div>
-                <h3 className="font-bold text-primary">Portfolio Pet</h3>
+                <h3 className="font-bold text-primary">Portfolio Assistant</h3>
                 <p className="text-xs text-muted-foreground">Always ready to help!</p>
               </div>
             </div>
