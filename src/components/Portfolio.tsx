@@ -112,8 +112,8 @@ export const Portfolio = () => {
       degree: "B.E. in AI & Machine Learning",
       institution: "Ballari Institute of Technology & Management",
       year: "2022-2026",
-      grade: "CGPA: 6.45",
-      status: "current"
+      grade: "CGPA: 7.03",
+      status: "completed"
     },
     {
       degree: "Diploma in Electrical & Electronics Engineering",
